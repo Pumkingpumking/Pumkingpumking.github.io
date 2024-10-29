@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>screen</title>
+</head>
+<script>
+    window.onload=function(){
+       texto.innerHTML="<h1>Pantalla completa</h1>";
+       texto.innerHTML+="<p>Ancho de pantalla: "+screen.width+"px</p>";
+       texto.innerHTML+="<p>Altura de la pantalla: "+screen.height+"px</p>";
+       texto.innerHTML+="<p>Ancho sin barras: </p>";
+       texto.innerHTML+="<p></p>";
+       const elemento=document.documentElement;
+       //querySelector slecciona un elemento que se encuentre que cumplea la regla de arriba
+       document.querySelector("button").onclick=function(){
+        if(elemento.requestFullscreen){
+            elemento.requestFullscreen()
+        }
+        else if(elemento.mozRequestFullScreen){
+            elemento.mozRequestFullScreen()
+        }
+        else if(elemento.webkitRequestFullscreen){
+            elemento.webkitRequestFullscreen()
+        }
+        else if(elemento.msRequestFullscreen){
+            elemento.msRequestFullscreen()
+        }
+
+       }
+    }
+      
+       
+        
+
+    
+    
+</script>
+
+
+
+<body>
+    <div id="texto">
+    </div>
+    <div><button id="boton1">Pantalla completa</button></div>
+    
+</body>
+</html>
